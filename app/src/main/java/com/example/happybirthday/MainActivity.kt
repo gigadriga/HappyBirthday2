@@ -29,14 +29,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             HappyBirthdayTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     GreetingImage(
-                        message = "Happy Birthday Sam!",
-                        from = "From Emma"
+                        message = getString(R.string.happy_birthday_text),
+                        from = getString(R.string.signature_text)
                     )
                 }
             }
@@ -52,7 +51,7 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
     ) {
         Text(
             text = message,
-            fontSize = 100.sp,
+            fontSize = 70.sp,
             lineHeight = 116.sp,
             textAlign = TextAlign.Center
         )
@@ -85,7 +84,6 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) 
         )
     }
 }
-
 @Preview(showBackground = true)
 @Composable
 fun BirthdayCardPreview() {
